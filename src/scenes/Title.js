@@ -2,8 +2,6 @@ import Phaser from 'phaser';
 import { W, H, COLORS, FONT_TITLE } from '../config.js';
 import { coverKey } from '../art/tableaux.js';
 import { text, button } from '../ui/widgets.js';
-import { foundEndings } from '../systems/progress.js';
-import { ENDINGS } from '../data/endings.js';
 import { whistle } from '../systems/audio.js';
 
 export class TitleScene extends Phaser.Scene {
@@ -30,26 +28,6 @@ export class TitleScene extends Phaser.Scene {
 
     const play = button(this, W / 2 - 150, 462, 300, 50, 'Prendre le service', () => this.start(), { size: 24, align: 'center', primary: true });
     play.container.setDepth(100);
-
-    const found = foundEndings();
-    const known = ENDINGS.filter((e) => found.has(e.id)).length;
-    text(this, W / 2, 526, `Fins découvertes : ${known} / ${ENDINGS.length}   ·   Entrée pour jouer   ·   M : couper le son`, 14, COLORS.text, {
-      stroke: COLORS.ink,
-      strokeThickness: 5,
-    })
-      .setOrigin(0.5)
-      .setDepth(100);
-    text(this, W - 12, 12, 'Mohamed Bouaziz & Benjamin Granier', 14, COLORS.text, { stroke: COLORS.ink, strokeThickness: 4 })
-      .setOrigin(1, 0)
-      .setDepth(100);
-    // licence SIL OFL : l'auteur de la police doit être crédité
-    text(this, W - 12, 32, 'Police Dogica © Roberto Mocci (SIL OFL)', 12, COLORS.text, { stroke: COLORS.ink, strokeThickness: 3 })
-      .setOrigin(1, 0)
-      .setDepth(100);
-
-    // crédits de production (demandés pour la restitution du projet)
-    text(this, 12, 12, 'Production : Département MMI, IUT de Béziers', 14, COLORS.text, { stroke: COLORS.ink, strokeThickness: 4 }).setDepth(100);
-    text(this, 12, 32, 'Projet « Drôles de trains » · R 3.08 · avec l’aide de l’IA Claude', 12, COLORS.text, { stroke: COLORS.ink, strokeThickness: 3 }).setDepth(100);
 
     this.input.keyboard.once('keydown-ENTER', () => this.start());
     this.input.keyboard.once('keydown-SPACE', () => this.start());
