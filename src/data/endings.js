@@ -1,0 +1,32 @@
+// Les fins. Il n'y a qu'une vraie fin (`terminus: true`, ton 'true') : celle des parties menées jusqu'au
+// Terminus sans mauvais choix. Toutes les autres arrêtent la partie sur place : un choix fatal
+// (`ending: 'id'` dans characters.js), une jauge à bout (checkGameOver dans systems/story.js) ou un
+// claquement de doigts raté. Chaque fin a son image, dessinée dans src/art/tableaux.js sous le même id.
+// `{delay}` dans un texte est remplacé par le retard en minutes.
+
+export const ENDINGS = [
+  { id: 'mutinerie', title: "Mutinerie au wagon 2", tone: 'bad', text: "Les passagers t'ont enfermé dans le local à balais. Ils ont voté pour un nouveau conducteur. C'est une chèvre. Elle conduit mieux que toi." },
+  { id: 'chaos_total', title: "Le train a quitté la réalité", tone: 'bad', text: "À force de chaos, le train a déraillé. Pas sur le côté : vers le haut, puis vers une autre dimension. Il paraît que là-bas, il est à l'heure." },
+  { id: 'retard', title: "Une heure de retard", tone: 'bad', text: "Tu roules avec {delay} minutes de retard. Les passagers ont eu le temps de se marier, de divorcer et de se réconcilier. La compagnie arrête le train et t'envoie une carte d'anniversaire." },
+  { id: 'coupe', title: "Coupé en deux", tone: 'bad', text: "Scrat a planté son gland. La fissure a fait le reste : le wagon 2 est parti à gauche, la locomotive à droite. Toi, tu es resté au milieu, avec le volant. Scrat a retrouvé son gland. Il est ravi." },
+  { id: 'poussiere', title: "Parti en fumée", tone: 'bad', text: "Thanos a claqué des doigts. La moitié du train a disparu. Tu as voulu compter les survivants, mais tes doigts s'envolaient déjà. Le train roule encore, parfaitement équilibré : il n'y a plus de conducteur." },
+  { id: 'embarques', title: "Tout le monde descend", tone: 'bad', text: "Plus de huit passagers, et rien pour arranger ça. Le Contrôleur a sorti un carnet neuf et a embarqué tout le monde, toi compris. Le train a pris une amende pour abandon de conducteur." },
+  { id: 'greve', title: "Grève du stagiaire", tone: 'bad', text: "Momo a posé son badge et bloqué la voie avec une pancarte : « STAGIAIRE EN COLÈRE ». Tous les stagiaires du réseau l'ont rejoint. Le train repartira après les négociations. Elles durent encore." },
+  { id: 'valide', title: "C'est validé", tone: 'bad', text: "Tu as confié le volant à Hoggy Rider. Il a tout validé : le feu rouge, le sens interdit, le mur. Le train est entré dans le stade par la tribune nord. Dans les décombres, un pouce se lève. « Validé. »" },
+  { id: 'debat', title: "Débat sans fin", tone: 'bad', text: "Tu as choisi un camp. L'autre a tiré le frein. Le train est arrêté en pleine voie pour un débat qui dure depuis onze jours. Le temps de parole est chronométré. Le tien est de zéro seconde." },
+  { id: 'vapeur', title: "C'était mieux avant", tone: 'bad', text: "Retour à la vapeur. Il a fallu du charbon : on a brûlé les banquettes, puis les horaires, puis ta casquette. Le train avance à quatre kilomètres-heure. Zemmour est ravi : c'est exactement comme avant." },
+  { id: 'asphyxie', title: "Guerre des odeurs", tone: 'bad', text: "Bruno et Shrek ont donné tout ce qu'ils avaient. Les vitres ont fondu. Les passagers ont sauté en marche, et toi aussi. Le train roule seul dans un nuage vert. On le sent venir trois gares à l'avance." },
+  { id: 'licencie', title: "Licencié par Jacky", tone: 'bad', text: "Jacky est revenu milliardaire, et il se souvenait très bien de toi. Il a racheté la compagnie, la ligne et ta casquette. Ta lettre de licenciement est écrite sur un billet de cinq cents. Tu dois le rendre." },
+  { id: 'picore', title: "Colère de poule", tone: 'bad', text: "Tu as voulu prendre le billet sous l'aile de Clara. Personne ne touche au billet de Clara. Elle t'a coursé jusqu'à la locomotive, puis hors du train. C'est elle qui conduit, maintenant. En baskets." },
+  { id: 'president', title: "La République des Rails", tone: 'bad', text: "Le wagon 2 a élu son président à l'unanimité : une voix pour, la sienne. Le train roule désormais à gauche, s'arrête à chaque gare pour un meeting et arrive quand le peuple le décide. Tu es ministre des Aiguillages." },
+  { id: 'marais', title: "Vie de marais", tone: 'bad', text: "Tu as lâché ton train pour une souche dans le marais de Shrek. Tu manges ce qu'il cuisine et tu ne parles pas avant midi. Le train est reparti tout seul. Il est arrivé à l'heure, pour la première fois." },
+  { id: 'cinema', title: "Coupez !", tone: 'bad', text: "Gabin crie « Moteur ! » et le monde passe en noir et blanc. Le train ralentit, la musique monte, le mot FIN s'affiche dans le ciel. Dans la salle, quelqu'un applaudit. Tu salues. Tu ne sais pas qui." },
+  { id: 'mercato', title: "Mercato ferroviaire", tone: 'bad', text: "Le train entre sur le terrain et marque de la locomotive. Il est transféré pour deux cents millions. Tu deviens l'agent d'un train. Lamine dit que c'est son meilleur coéquipier : il n'est jamais hors-jeu." },
+  { id: 'roi_pigeon', title: "Pigeon-Express", tone: 'bad', text: "Roucoul III a pris les commandes. Le train vole maintenant de toit en toit, et dépose des miettes dans chaque gare. Tu es nommé Duc des Rails. Tu as une petite couronne. Elle est en pain." },
+  { id: 'boucle', title: "Pas de terminus", tone: 'bad', text: "Tu fais demi-tour vers Saint-Banal. Sur le quai, un stagiaire agite un badge fait au feutre. Un moustachu en maillot bleu te demande si Hoggy Rider est à bord. Tu as une très forte impression de déjà-vu…" },
+  { id: 'neant', title: "Au bout de la voie", tone: 'bad', text: "Tu as voulu voir le terminus. Tu as dépassé le dernier panneau, puis le dernier rail. Il n'y avait rien : ni gare, ni quai, ni sol. Le train est tombé longtemps. Il tombe encore, parfaitement à l'heure." },
+  { id: 'retraite', title: "Retraite anticipée", tone: 'bad', text: "Tu lui as laissé le volant et tu t'es assis au wagon 2. Tu t'es endormi. À ton réveil, tu avais une barbe blanche, et un jeune conducteur te regardait depuis le quai. Tu lui as dit que le terminus n'existait pas." },
+
+  // La vraie fin : la seule qui se gagne.
+  { id: 'vraie_fin', terminus: true, title: "Le terminus n'existe pas", tone: 'true', text: "Il n'y a jamais eu de terminus. Juste des gares, des gens, et toi au milieu. Tu remontes en cabine, tu siffles, et le train repart. Sur le quai, toi dans quarante ans lève sa casquette. Bonne route, conducteur." },
+];
