@@ -47,6 +47,10 @@ export class TitleScene extends Phaser.Scene {
       .setOrigin(1, 0)
       .setDepth(100);
 
+    // crédits de production (demandés pour la restitution du projet)
+    text(this, 12, 12, 'Production : Département MMI, IUT de Béziers', 14, COLORS.text, { stroke: COLORS.ink, strokeThickness: 4 }).setDepth(100);
+    text(this, 12, 32, 'Projet « Drôles de trains » · R 3.08 · avec l’aide de l’IA Claude', 12, COLORS.text, { stroke: COLORS.ink, strokeThickness: 3 }).setDepth(100);
+
     this.input.keyboard.once('keydown-ENTER', () => this.start());
     this.input.keyboard.once('keydown-SPACE', () => this.start());
   }
